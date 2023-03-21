@@ -1,0 +1,41 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/login.css')
+  title Document
+header.header
+  nav.nav
+    .logo
+      a(href='/') Quai Aquatique
+    ul.nav-items.mobile-nav-links
+      li.nav-item
+        a(href='/reservation') R&eacute;servations
+      if userLoggedIn==undefined
+        li.nav-item.login-item
+          a.login(href='/connexion') Connexion
+      if userLoggedIn!=undefined
+        li.nav-item.login-item
+          a(href='/dashboard') #{userLoggedIn.username}
+    .burger
+      .line11
+      .line22
+      .line33
+main
+  section
+    .login-container
+      form#login-form(action='#' method='post')
+        h2 Connexion
+        span #{errorMessage}
+        label(for='username') Email utilisateur
+        input#username(type='email' placeholder='Entrer votre email' required='' name='email' value=email)
+        label(for='password') Mot de passe
+        input#password(type='password'  required='' name='password' value=password)
+        .login-form__register
+          span Vous n&apos;avez pas de compte?
+          a(href='/inscription') Cr&eacute;er un compte
+        input#submit(type='submit' value='Se connecter')
+footer
+  p Tous droits r&eacute;serv&eacute;s &copy; Notre Restaurant 2023
+script(src='/app.js')

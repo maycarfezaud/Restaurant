@@ -1,0 +1,55 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/booking.css')
+  title Document
+header.header
+  nav.nav
+    .logo
+      a(href='/') Quai Aquatique
+    ul.nav-items.mobile-nav-links
+      li.nav-item
+        a(href='/reservation') R&eacute;servations
+      if userLoggedIn==undefined
+        li.nav-item.login-item
+          a.login(href='/connexion') Connexion
+      if userLoggedIn!=undefined
+        li.nav-item.login-item
+          a(href='/dashboard') #{userLoggedIn.username}
+    .burger
+      .line11
+      .line22
+      .line33
+h1 R&eacute;servation de plat
+
+form
+  span.succesMessage #{successMessage}
+  label(for='nom') Nom :
+  input#booking-nom(type='text', name='nom', required='', value=nom)
+  label(for='email') E-mail :
+  input#booking-email(type='email', name='email', required='', value=email)
+  label(for='date') Date de r&eacute;servation :
+  input#booking-date(type='date', name='date', required='', value=date)
+  label(for='heure') Heure de r&eacute;servation :
+  select#booking-heure(name='heure')
+    option(value='12:00') 12:00
+    option(value='12:30') 12:30
+    option(value='13:00') 13:00
+    option(value='13:30') 13:30
+    option(value='14:00') 14:00
+    option(value='19:00') 19:00
+    option(value='19:30') 19:30
+    option(value='20:00') 20:00
+    option(value='20:30') 20:30
+    option(value='21:00') 21:00
+    option(value='21:30') 21:30
+    option(value='22:00') 22:00
+  label(for='plat') Plat :
+  select#booking-plat(name='plat')
+    option(value='steak') Steak
+    option(value='poisson') Poisson
+    option(value='salade') Salade
+  input#bookingSubmit(type='submit' value='Réserver')
+script(src='/app.js')

@@ -1,0 +1,189 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Notre Restaurant
+  link(rel='stylesheet' href='/css/home.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css')
+script.
+  var userLoggedIn = !{userLoggedInjs}
+header.header
+  nav.nav
+    .logo
+      a(href='/') Quai Aquatique
+    ul.nav-items.mobile-nav-links
+      li.nav-item
+        a(href='#menu') Menu
+      li.nav-item
+        a(href='#about-us') A propos nous
+      li.nav-item
+        a(href='#contact') contact
+      li.nav-item
+        a(href='#gallery') Gallery
+      li.nav-item
+        a(href='/reservation') R&eacute;servations
+      if userLoggedIn==undefined
+        li.nav-item.login-item
+          a.login(href='/connexion') Connexion
+      if userLoggedIn!=undefined
+        li.nav-item.login-item
+          a(href='/dashboard') #{userLoggedIn.username}
+    .burger
+      .line11
+      .line22
+      .line33
+  .banner
+    h1 Notre Restaurant
+    p Le meilleur endroit pour manger
+    a.banner-btn(href='/reservation') Reserver
+main
+  section#menu.menu
+    h2 Menu
+    ul.menu-items
+      li.menu-item
+        .menu-item__img
+          img(src='https://images.pexels.com/photos/7627422/pexels-photo-7627422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+        h4 Burrata &agrave; la tomate
+        p Burrata, tomates, basilic, huile d&apos;olive
+        p 9 &euro;
+      li.menu-item
+        .menu-item__img
+          img(src='https://images.pexels.com/photos/7627422/pexels-photo-7627422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+        h4 Salade de crevettes
+        p Crevettes, avocat, mangue, laitue, vinaigrette &agrave; la mangue
+        p 12 &euro;
+      li.menu-item
+        .menu-item__img
+          img(src='https://images.pexels.com/photos/7627422/pexels-photo-7627422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+        h4 C&ocirc;te de boeuf grill&eacute;e
+        p C&ocirc;te de boeuf grill&eacute;e, pommes de terre, l&eacute;gumes grill&eacute;s
+        p 25 &euro;
+      li.menu-item
+        .menu-item__img
+          img(src='https://images.pexels.com/photos/7627422/pexels-photo-7627422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+        h4 Pav&eacute; de saumon grill&eacute;
+        p Saumon grill&eacute;, riz, l&eacute;gumes saut&eacute;s
+        p 18 &euro;
+      li.menu-item
+        .menu-item__img
+          img(src='https://images.pexels.com/photos/7627422/pexels-photo-7627422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+        h4 Pav&eacute; de saumon grill&eacute;
+        p Saumon grill&eacute;, riz, l&eacute;gumes saut&eacute;s
+        p 18 &euro;
+      li.menu-item
+        .menu-item__img
+          img(src='https://images.pexels.com/photos/7627422/pexels-photo-7627422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+        h4 Tarte aux pommes
+        p Tarte aux pommes maison, glace &agrave; la vanille
+        p 6 &euro;
+      li.menu-item
+        .menu-item__img
+          img(src='https://images.pexels.com/photos/6223191/pexels-photo-6223191.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load' alt='')
+        h4 Mousse au chocolat
+        p Mousse au chocolat noir, chantilly maison
+        p 7 &euro;
+      li.menu-item
+        .menu-item__img
+          img(src='https://images.pexels.com/photos/7627422/pexels-photo-7627422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+        h4 Tarte aux pommes
+        p Tarte aux pommes maison, glace &agrave; la vanille
+        p 6 &euro;
+      li.menu-item
+        .menu-item__img
+          img(src='https://images.pexels.com/photos/5710178/pexels-photo-5710178.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load' alt='')
+        h4 Mousse au chocolat
+        p Mousse au chocolat noir, chantilly maison
+        p 7 &euro;
+      li.menu-item
+        .menu-item__img
+          img(src='https://images.pexels.com/photos/6287495/pexels-photo-6287495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+        h4 Tarte aux pommes
+        p Tarte aux pommes maison, glace &agrave; la vanille
+        p 6 &euro;
+      li.menu-item
+        .menu-item__img
+          img(src='https://images.pexels.com/photos/4669214/pexels-photo-4669214.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load' alt='')
+        h4 Mousse au chocolat
+        p Mousse au chocolat noir, chantilly maison
+        p 7 &euro;
+  section#about-us
+    .about-container
+      .about-content
+        .about-text
+          h2 &Agrave; propos de nous
+          p
+            | Nous sommes une entreprise sp&eacute;cialis&eacute;e dans la vente de produits
+            | biologiques. Notre mission est de fournir &agrave; nos clients des
+            | produits sains et de qualit&eacute; sup&eacute;rieure, tout en pr&eacute;servant
+            | l&apos;environnement.
+          p
+            | Nous avons commenc&eacute; comme une petite entreprise familiale il y a
+            | 10 ans et depuis, nous avons connu une croissance rapide gr&acirc;ce &agrave;
+            | notre engagement envers la qualit&eacute; et l&apos;int&eacute;grit&eacute;. Aujourd&apos;hui,
+            | nous sommes fiers de servir des clients dans le monde entier.
+        .about-image
+          img(src='https://images.pexels.com/photos/8023752/pexels-photo-8023752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='Image À propos de nous')
+  section#testimonials.testimonials
+    h2 T&eacute;moignages
+    .testimonials-container
+      .testimonial
+        img(src='https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='Client 1')
+        p
+          | &laquo; J&apos;adore les produits de cette entreprise. Ils sont de grande
+          | qualit&eacute; et ont un go&ucirc;t incroyable. Je les recommande vivement ! &raquo;
+        p.client-name - Jeanne L.
+      .testimonial
+        img(src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600' alt='Client 2')
+        p
+          | &laquo; Le service client de cette entreprise est exceptionnel. Ils ont
+          | r&eacute;pondu rapidement &agrave; toutes mes questions et ont &eacute;t&eacute; tr&egrave;s utiles
+          | tout au long du processus de commande. &raquo;
+        p.client-name - Marc D.
+  section#contact
+    .container
+      h2 Contactez-nous
+      form(action='#' method='post')
+        .form-group
+          label(for='name') Nom :
+          input#name(type='text' name='name' required='')
+        .form-group
+          label(for='email') Email :
+          input#email(type='email' name='email' required='')
+        .form-group
+          label(for='message') Message :
+          textarea#message(name='message' required='')
+        div
+          button(type='submit') Envoyer
+  section#gallery.gallery
+    .gallery-title
+      h2 Notre Gallery
+    .gallery-container
+      .gallery-img.img-1
+        img(src='https://images.pexels.com/photos/8023752/pexels-photo-8023752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+      .gallery-img.img-2
+        img(src='https://images.pexels.com/photos/10805995/pexels-photo-10805995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+      .gallery-img.img-3
+        img(src='https://images.pexels.com/photos/13485220/pexels-photo-13485220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+      .gallery-img.img-4
+        img(src='https://images.pexels.com/photos/10758565/pexels-photo-10758565.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+      .gallery-img.img-5
+        img(src='https://images.pexels.com/photos/11975887/pexels-photo-11975887.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+      .gallery-img.img-6
+        img(src='https://images.pexels.com/photos/4079520/pexels-photo-4079520.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='')
+  //
+    <section class="contact">
+    <h2>Contactez-nous</h2>
+    <p>
+    N'hésitez pas à nous contacter pour toute demande de renseignements ou
+    de service. Nous ferons de notre mieux pour vous répondre dans les
+    plus brefs délais
+    </p>
+    <div><span>+33 6 21 48 84 56</span></div>
+    <div class="contact-network">
+    <i class="fa-brands fa-facebook-f"></i
+    ><i class="fa-brands fa-square-instagram"></i>
+    <i class="fa-brands fa-twitter"></i>
+    </div>
+    </section>
+footer
+  p Tous droits r&eacute;serv&eacute;s &copy; Notre Restaurant 2023
+script(src='/app.js')
